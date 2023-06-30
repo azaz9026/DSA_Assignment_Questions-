@@ -1,0 +1,265 @@
+
+// Q.1 =========================================================================================================================
+
+function reconstructPermutation(s){
+    let prem = []
+    let n = s.length
+    let low = 0
+    let high = n
+
+    for(let i = 0 ; i < n ; i++){
+        if(s[i] === 'I'){
+            prem.push(low)
+            low++
+        }
+        else if(s[i] === 'D'){
+            prem.push(high)
+            high--
+        }
+    }
+    prem.push(low);
+
+    return prem
+}
+
+const s = "IDID";
+const result = reconstructPermutation(s);
+console.log(result);
+
+
+
+
+// Q.2 =========================================================================================================================
+
+
+function searchMatrix(matrix, target) {
+    const rows = matrix.length;
+    const cols = matrix[0].length;
+  
+    let start = 0;
+    let end = rows * cols - 1;
+  
+    while (start <= end) {
+      const mid = Math.floor(start + (end - start) / 2);
+      const row = Math.floor(mid / cols);
+      const col = mid % cols;
+  
+      if (matrix[row][col] === target) {
+        return true;
+      } else if (matrix[row][col] < target) {
+        start = mid + 1;
+      } else {
+        end = mid - 1;
+      }
+    }
+  
+    return false;
+  }
+  
+
+const matrix = [
+    [1, 3, 5, 7],
+    [10, 11, 16, 20],
+    
+    [23, 30, 34, 50]
+  ];
+  const target = 3;
+  
+  const result1 = searchMatrix(matrix, target);
+  console.log(result1);  // Output: true
+  
+
+
+  // Q.3 =========================================================================================================================
+
+  function validMountainArray(arr) {
+    const n = arr.length;
+    
+    if (n < 3) {
+      return false;
+    }
+    
+    let i = 1;
+    
+    // Find the peak element
+    while (i < n - 1 && arr[i] > arr[i - 1]) {
+      i++;
+    }
+    
+    if (i === 1 || i === n - 1) {
+      return false;
+    }
+    
+    // Check if the elements before the peak are strictly increasing
+    for (let j = 0; j < i; j++) {
+      if (arr[j] >= arr[j + 1]) {
+        return false;
+      }
+    }
+    
+    // Check if the elements after the peak are strictly decreasing
+    for (let j = i; j < n - 1; j++) {
+      if (arr[j] <= arr[j + 1]) {
+        return false;
+      }
+    }
+    
+    return true;
+  }
+  const arr = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+  console.log(validMountainArray(arr)); // Output: true
+  
+  const arr2 = [1, 2, 3, 4, 5];
+  console.log(validMountainArray(arr2)); // Output: false
+
+  
+
+   // Q.4 =========================================================================================================================
+
+
+   function findMaxLength(nums) {
+    const countMap = new Map();
+    countMap.set(0, -1);
+    let count = 0;
+    let maxLen = 0;
+  
+    for (let i = 0; i < nums.length; i++) {
+      if (nums[i] === 0) {
+        count -= 1;
+      } else {
+        count += 1;
+      }
+  
+      if (countMap.has(count)) {
+        maxLen = Math.max(maxLen, i - countMap.get(count));
+      } else {
+        countMap.set(count, i);
+      }
+    }
+  
+    return maxLen;
+  }
+  const nums = [0, 1];
+  console.log(findMaxLength(nums)); // Output: 2
+    
+
+  
+
+   // Q.5 =========================================================================================================================
+
+   function minProductSum(nums1, nums2) {
+    nums1.sort((a, b) => a - b);
+    nums2.sort((a, b) => b - a);
+  
+    let minProductSum = 0;
+  
+    for (let i = 0; i < nums1.length; i++) {
+      minProductSum += nums1[i] * nums2[i];
+    }
+  
+    return minProductSum;
+  }
+  const nums1 = [5, 3, 4, 2];
+  const nums2 = [4, 2, 2, 5];
+  console.log(minProductSum(nums1, nums2)); // Output: 40
+    
+
+   // Q.6 =========================================================================================================================
+
+
+   function findOriginalArray(changed) {
+    const original = [];
+  
+    changed.sort((a, b) => a - b);
+  
+    for (const num of changed) {
+      const doubled = num * 2;
+  
+      if (changed.includes(doubled) && changed.lastIndexOf(doubled) !== -1) {
+        const index = changed.indexOf(doubled);
+        changed.splice(index, 1);
+        original.push(doubled);
+      } else {
+        return [];
+      }
+    }
+  
+    return original;
+  }
+
+  const changed = [1, 3, 4, 2, 6, 8];
+console.log(findOriginalArray(changed)); // Output: [1, 3, 4]
+
+  
+
+ // Q.7 =========================================================================================================================
+
+ function generateMatrix(n) {
+  const matrix = Array.from({ length: n }, () => new Array(n).fill(0));
+  let top = 0,
+    bottom = n - 1,
+    left = 0,
+    right = n - 1;
+  let num = 1;
+
+  while (top <= bottom && left <= right) {
+    // Traverse top row
+    for (let i = left; i <= right; i++) {
+      matrix[top][i] = num;
+      num++;
+    }
+    top++;
+
+    // Traverse right column
+    for (let i = top; i <= bottom; i++) {
+      matrix[i][right] = num;
+      num++;
+    }
+    right--;
+
+    // Traverse bottom row
+    for (let i = right; i >= left; i--) {
+      matrix[bottom][i] = num;
+      num++;
+    }
+    bottom--;
+
+    // Traverse left column
+    for (let i = bottom; i >= top; i--) {
+      matrix[i][left] = num;
+      num++;
+    }
+    left++;
+  }
+
+  return matrix;
+}
+const n = 4;
+console.log(generateMatrix(n));
+
+
+ // Q.8 =========================================================================================================================
+
+
+ function multiply(mat1, mat2) {
+  const m = mat1.length;
+  const k = mat1[0].length;
+  const n = mat2[0].length;
+
+  const result = new Array(m).fill(0).map(() => new Array(n).fill(0));
+
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      let sum = 0;
+      for (let p = 0; p < k; p++) {
+        sum += mat1[i][p] * mat2[p][j];
+      }
+      result[i][j] = sum;
+    }
+  }
+
+  return result;
+}
+const mat1 = [[1, 0, 0], [-1, 0, 3]];
+const mat2 = [[7, 0, 0], [0, 0, 0], [0, 0, 1]];
+console.log(multiply(mat1, mat2));
