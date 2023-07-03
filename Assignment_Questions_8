@@ -1,0 +1,344 @@
+// Q.1 ===============================================================================================================================
+
+function minimumDeleteSum(s1, s2) {
+  const m = s1.length;
+  const n = s2.length;
+
+  // Create a 2D table dp
+  const dp = new Array(m + 1);
+  for (let i = 0; i <= m; i++) {
+    dp[i] = new Array(n + 1).fill(0);
+  }
+
+  // Initialize first row and first column
+  for (let i = 1; i <= m; i++) {
+    dp[i][0] = dp[i - 1][0] + s1.charCodeAt(i - 1);
+  }
+  for (let j = 1; j <= n; j++) {
+    dp[0][j] = dp[0][j - 1] + s2.charCodeAt(j - 1);
+  }
+
+  // Fill the dp table
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (s1[i - 1] === s2[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1];
+      } else {
+        dp[i][j] = Math.min(
+          dp[i - 1][j] + s1.charCodeAt(i - 1),
+          dp[i][j - 1] + s2.charCodeAt(j - 1)
+        );
+      }
+    }
+  }
+
+  return dp[m][n];
+}
+
+// Example usage:
+const s1 = "sea";
+const s2 = "eat";
+const result = minimumDeleteSum(s1, s2);
+console.log(result); // Output: 231
+
+
+// Q.2 ===============================================================================================================================
+
+function isValid(s) {
+  const stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+
+    if (char === '(' || char === '*') {
+      stack.push(char);
+    } else if (char === ')') {
+      if (stack.length > 0) {
+        stack.pop();
+      } else {
+        let foundStar = false;
+        for (let j = 0; j < stack.length; j++) {
+          if (stack[j] === '*') {
+            stack.splice(j, 1);
+            foundStar = true;
+            break;
+          }
+        }
+
+        if (!foundStar) {
+          return false;
+        }
+      }
+    } else {
+      return false;
+    }
+  }
+
+  while (stack.length > 0) {
+    const top = stack.pop();
+    if (top !== '*') {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Example usage:
+const s = "()";
+const result = isValid(s);
+console.log(result); // Output: true
+
+
+
+// Q.3 ===============================================================================================================================
+function minDistance(word1, word2) {
+  const m = word1.length;
+  const n = word2.length;
+
+  // Create a 2D table dp
+  const dp = new Array(m + 1);
+  for (let i = 0; i <= m; i++) {
+    dp[i] = new Array(n + 1).fill(0);
+  }
+
+  // Initialize first row and first column
+  for (let i = 0; i <= m; i++) {
+    dp[i][0] = i;
+  }
+  for (let j = 0; j <= n; j++) {
+    dp[0][j] = j;
+  }
+
+  // Fill the dp table
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (word1[i - 1] === word2[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1];
+      } else {
+        dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + 1;
+      }
+    }
+  }
+
+  return dp[m][n];
+}
+
+// Example usage:
+const word1 = "sea";
+const word2 = "eat";
+const result = minDistance(word1, word2);
+console.log(result); // Output: 2
+
+// Q.4 ===============================================================================================================================
+
+class TreeNode {
+  constructor(value) {
+    this.val = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function constructTree(s) {
+  let index = 0;
+
+  const constructTreeHelper = () => {
+    if (index >= s.length || s[index] === ')') {
+      return null;
+    }
+
+    // Extract the integer value
+    let value = '';
+    while (index < s.length && s[index] !== '(' && s[index] !== ')') {
+      value += s[index];
+      index++;
+    }
+
+    // Create a new TreeNode
+    const node = new TreeNode(parseInt(value));
+
+    // Construct the left child
+    if (index < s.length && s[index] === '(') {
+      index++; // Move to the next character '('
+      node.left = constructTreeHelper();
+    }
+
+    // Construct the right child
+    if (index < s.length && s[index] === '(') {
+      index++; // Move to the next character '('
+      node.right = constructTreeHelper();
+    }
+
+    index++; // Move to the next character ')'
+
+    return node;
+  };
+
+  return constructTreeHelper();
+}
+
+// Example usage:
+const s = "4(2(3)(1))(6(5))";
+const root = constructTree(s);
+console.log(root); // Output: The constructed binary tree
+
+// Q.5 ===============================================================================================================================
+
+function compress(chars) {
+  let writeIndex = 0;
+  let count = 1;
+
+  for (let i = 1; i <= chars.length; i++) {
+    if (i < chars.length && chars[i] === chars[i - 1]) {
+      count++;
+    } else {
+      chars[writeIndex] = chars[i - 1];
+      writeIndex++;
+
+      if (count > 1) {
+        const countStr = count.toString();
+        for (let j = 0; j < countStr.length; j++) {
+          chars[writeIndex] = countStr[j];
+          writeIndex++;
+        }
+      }
+
+      count = 1;
+    }
+  }
+
+  return writeIndex;
+}
+
+// Example usage:
+const chars = ["a", "a", "b", "b", "c", "c", "c"];
+const newLength = compress(chars);
+console.log(newLength); // Output: 6
+console.log(chars.slice(0, newLength)); // Output: ["a", "2", "b", "2", "c", "3"]
+
+// Q.6 ===============================================================================================================================
+
+
+function findAnagrams(s, p) {
+  const result = [];
+  const pCount = Array(26).fill(0);
+  const windowCount = Array(26).fill(0);
+  
+  for (let i = 0; i < p.length; i++) {
+    const index = p.charCodeAt(i) - 'a'.charCodeAt(0);
+    pCount[index]++;
+  }
+  
+  let left = 0;
+  let right = 0;
+  
+  while (right < s.length) {
+    const rightIndex = s.charCodeAt(right) - 'a'.charCodeAt(0);
+    windowCount[rightIndex]++;
+    
+    if (right - left + 1 > p.length) {
+      const leftIndex = s.charCodeAt(left) - 'a'.charCodeAt(0);
+      windowCount[leftIndex]--;
+      left++;
+    }
+    
+    if (arraysAreEqual(windowCount, pCount)) {
+      result.push(left);
+    }
+    
+    right++;
+  }
+  
+  return result;
+}
+
+function arraysAreEqual(arr1, arr2) {
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Example usage:
+const s = "cbaebabacd";
+const p = "abc";
+const indices = findAnagrams(s, p);
+console.log(indices); // Output: [0, 6]
+
+
+
+// Q.7 ===============================================================================================================================
+
+
+function decodeString(s) {
+  const stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (isDigit(s[i])) {
+      let count = 0;
+      while (isDigit(s[i])) {
+        count = count * 10 + parseInt(s[i]);
+        i++;
+      }
+      i--; // Decrement i to process the non-digit character in the next iteration.
+      stack.push(count);
+    } else if (s[i] === '[') {
+      stack.push('');
+    } else if (s[i] === ']') {
+      let repeatCount = stack.pop();
+      let decodedSubstring = stack.pop();
+      decodedSubstring += decodedSubstring.repeat(repeatCount);
+      stack.push(decodedSubstring);
+    } else {
+      stack.push(s[i]);
+    }
+  }
+
+  return stack.join('');
+}
+
+function isDigit(char) {
+  return /\d/.test(char);
+}
+
+// Example usage:
+const s = "3[a]2[bc]";
+const decodedString = decodeString(s);
+console.log(decodedString); // Output: "aaabcbc"
+
+
+// Q.8 ===============================================================================================================================
+
+
+function canSwapsEqual(s, goal) {
+  const diffIndices = [];
+  const diffChars = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] !== goal[i]) {
+      diffIndices.push(i);
+      diffChars.push(s[i], goal[i]);
+    }
+  }
+
+  if (diffIndices.length !== 2) {
+    return false;
+  }
+
+  const [firstIndex, secondIndex] = diffIndices;
+  const [firstCharS, firstCharGoal, secondCharS, secondCharGoal] = diffChars;
+
+  return (
+    firstCharS === secondCharGoal &&
+    firstCharGoal === secondCharS
+  );
+}
+
+// Example usage:
+const s = "ab";
+const goal = "ba";
+const result = canSwapsEqual(s, goal);
+console.log(result); // Output: true
