@@ -1,0 +1,221 @@
+// Q.1 ===============================================================================================================================
+
+// Ans .1
+/* The <!DOCTYPE html> declaration specifically refers to the HTML5 standard. It is placed at the beginning of 
+   an HTML document to inform the web browser about the version of HTML being used.This declaration helps the browser
+   understand how to interpret and render the HTML markup correctly.*/
+
+
+// Q.2 ===============================================================================================================================
+ 
+// Ans .2
+ /*Semantic tags in HTML are specific elements that carry meaning and describe the content within them.
+  They provide a way to structure and markup web content based on its meaning, rather than just its 
+  presentation. Some commonly used semantic tags in HTML5 include <header>, <nav>, <section>, <article>,
+  <aside>, <footer>, <main>, <figure>, and <figcaption>, among others.*/
+
+
+
+// Q.3 ===============================================================================================================================
+
+//Ans . 3
+
+/*HTML Tags:
+   HTML tags are the markup symbols used to define the structure and presentation of content within an HTML document. 
+   They are represented by angle brackets (< and >) and are typically written in lowercase. HTML tags are used to enclose
+   and define HTML elements. Examples of HTML tags include <h1>, <p>, <div>, <img>, <a>, etc.
+
+HTML Elements:
+    HTML elements are made up of opening and closing tags, along with the content enclosed within them. An HTML element  
+    represents a specific part of a web page and defines how it should be structured or styled. Elements are composed of
+     an opening tag, the content, and a closing tag. For example, the HTML element for a heading is <h1>Heading</h1>. 
+     Here, <h1> is the opening tag, "Heading" is the content, and </h1> is the closing tag. The complete element 
+     <h1>Heading</h1> is an example of an HTML element.
+     */
+
+
+// Q.4 ===============================================================================================================================
+
+// Ans .4
+/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Resume</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    h1, h2 {
+      color: #333;
+    }
+    
+    .section {
+      margin-bottom: 20px;
+    }
+    
+    .section h2 {
+      margin-bottom: 10px;
+    }
+    
+    .section p {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h1> Md Azaz</h1>
+    <p>Web Developer</p>
+    <p>Email: mdazaz9026@gmail.com</p>
+    <p>Phone: 3216549871 </p>
+  </div>
+
+  <div class="section">
+    <h2>Education</h2>
+    <p>Bachelor of Science in Computer Science</p>
+    <p> intgil University, 2022-2024 </p>
+  </div>
+
+  <div class="section">
+    <h2>Experience</h2>
+    <h3>Web Developer</h3>
+    <p>ABC Company, 20XX-20XX</p>
+    <ul>
+      <li>Developed and maintained company websites using HTML, CSS, and JavaScript</li>
+      <li>Collaborated with design and marketing teams to implement website features and enhancements</li>
+      <li>Optimized websites for performance and search engine optimization</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+      <li>Responsive Web Design</li>
+      <li>Version Control (Git)</li>
+    </ul>
+  </div>
+</body>
+</html>
+*/
+
+// Q.5 ===============================================================================================================================
+
+// Ans.5
+
+/*
+
+HTML5 introduced several advancements and improvements over its previous versions. Some of the advantages of HTML5 over previous versions include:
+
+ 1. New Semantic Elements: HTML5 introduced new semantic elements such as <header>, <nav>, <section>, <article>, <footer>, etc.
+  These elements provide a clearer structure to the web page and make it easier for search engines and assistive technologies to understand the content.
+
+ 2. Improved Multimedia Support: HTML5 provides native support for audio and video playback without the need for third-party plugins like Flash.
+  It introduced the <audio> and <video> elements, making it easier to embed multimedia content on web pages.
+
+ 3. Canvas Element: HTML5 introduced the <canvas> element, which allows for dynamic rendering and manipulation of graphics, animations, and interactive 
+ content using JavaScript. It enables developers to create complex visualizations, games, and multimedia applications directly within the browser.
+
+ 4. Offline and Storage Capabilities: HTML5 introduced the ability to store data locally on the client-side using the Web Storage API (localStorage and sessionStorage)
+  and the ability to work offline using the Application Cache. 
+*/
+
+
+// Q.6 ===============================================================================================================================
+
+// Ans .6
+/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+</head>
+<body>
+  <div class="music-player">
+    <h1>Music Player</h1>
+
+    <audio id="audio-player" controls>
+      <source src="path_to_your_audio_file.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="controls">
+      <button id="play-btn">Play</button>
+      <button id="pause-btn">Pause</button>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+*/ 
+
+
+// Q.7 ===============================================================================================================================
+
+// Ans.7
+
+/*The <figure> tag and the <img> tag serve different purposes in HTML.
+
+<img> tag:
+
+1. The <img> tag is a self-closing tag used to embed an image in an HTML document.
+    It is used to display a single image on a web page.
+    It requires the src attribute to specify the image file's path or URL.
+    It can also have attributes such as alt (alternative text), width, height, etc., to provide additional information about the image.
+    The <img> tag does not provide any specific semantics or structure for the image. It is primarily used for displaying standalone images.
+
+<figure> tag:
+
+2. The <figure> tag is used to encapsulate and represent a self-contained content block, typically an image or an illustration, along with its caption or description.
+    It provides semantic meaning to the content it wraps and indicates that the content is self-contained and can be understood independently.
+    It is often used in combination with the <figcaption> tag, which is placed inside the <figure> tag and used to provide a caption or description for the content.
+    The <figure> tag can include various types of content, such as images, diagrams, code snippets, videos, etc., along with their respective captions.
+    It helps in improving the accessibility and structure of the HTML document by associating the content with its description.
+ */
+
+
+// Q.8 ===============================================================================================================================
+
+// Ans.8
+
+/*
+HTML Tags:
+
+Tags are used to define the structure and semantics of the content in an HTML document.
+Tags are enclosed in angle brackets (<>) and placed around the content they affect.
+Tags can be either opening tags (<tag>) or self-closing tags (<tag />) depending on whether they require a closing tag or not.
+Examples of HTML tags include <html>, <head>, <body>, <div>, <p>, <h1>, <img>, etc.
+HTML Attributes:
+
+Attributes provide additional information or modify the behavior of HTML elements.
+Attributes are placed inside the opening tag of an HTML element.
+Attributes consist of a name and a value, separated by an equals sign (=), and the value is wrapped in quotes (" or ').
+Attributes can be global attributes or specific to certain elements.
+Examples of global attributes that can be used with various HTML elements include:
+class: Specifies one or more CSS class names to style the element.
+id: Specifies a unique identifier for the element.
+style: Specifies inline CSS styles for the element.
+title: Specifies additional information about the element.
+lang: Specifies the language of the element's content.
+data-*: Allows custom data attributes to be added to the element.
+Here's an example of how global attributes can be used:
+
+
+html:-
+
+<div class="container" id="myDiv" style="background-color: yellow;" title="This is a container">
+  <p data-info="Some additional information">Hello, World!</p>
+</div>
+*/
