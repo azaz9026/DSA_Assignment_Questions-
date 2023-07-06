@@ -1,0 +1,179 @@
+// Q . 1 ================================================================================================================
+
+// Ans. 1 
+
+/*The box model is a fundamental concept in CSS (Cascading Style Sheets) that defines how elements on a web page 
+are structured and displayed. It describes the properties and behavior of the rectangular boxes that surround every HTML element.*/
+
+
+
+// Q . 2 ================================================================================================================
+
+// Ans. 2
+
+/* In CSS, selectors are used to target specific HTML elements and apply styles to them. 
+   There are several types of selectors available in CSS, each with its own advantages and use cases.
+   Here are some commonly used selector types:
+
+    1. Element selectors 
+
+    2. Class selectors 
+
+    3. ID selectors
+
+    4. Attribute selectors
+
+    5. Pseudo-classes and pseudo-elements */
+
+
+
+// Q . 3 ================================================================================================================
+
+// Ans. 3
+
+  /*In CSS, vw and vh are units of measurement that represent a percentage of the viewport width (vw) and viewport height (vh) respectively.
+  The viewport refers to the visible portion of the web page in the browser window. */ 
+
+
+// Q . 4 ================================================================================================================
+
+
+// Ans. 4
+
+    /*In CSS, the display property is used to define how an element should be rendered in terms of its layout behavior. 
+    Three commonly used values for the display property are "inline," "inline-block," and "block." Here's a breakdown of the differences between them:
+
+   1.  Inline:
+
+          An inline element does not start on a new line and only takes up as much width as necessary to display its content.
+          Inline elements cannot have a specified width or height. Examples of inline elements are <span>, <a>, and <em>.
+
+   2. Inline-block:
+
+          An inline-block element is similar to an inline element in that it does not start on a new line. However, 
+          it behaves like a block-level element in terms of its ability to have a specified width and height.
+          Inline-block elements preserve vertical space (top and bottom margins and paddings) 
+          and can have line breaks before and after them.
+
+    3. Block:
+          A block-level element starts on a new line and takes up the full available width by default. Block-level elements can 
+          have a specified width and height and create line breaks before and after themselves. Examples of block-level elements 
+          are <div>, <p>, and <h1> to <h6>. 
+          */
+              
+
+// Q . 5 ================================================================================================================
+
+// Ans. 5
+
+    
+/*The box-sizing property in CSS determines how the total width and height of an element are calculated, 
+taking into account its content, padding, border, and margin. The two most commonly used values for the 
+box-sizing property are "content-box" and "border-box," and they have significant differences
+ in how they affect the sizing of elements.
+
+1 . Content-box:
+
+      By default, elements have the box-sizing property set to "content-box." This means that the specified width 
+      and height of the element only apply to the content box. The content box dimensions do not include the padding,
+      border, or margin. In other words, when using the "content-box" value, the width and height properties control 
+      only the size of the content within the element, and the padding, border, and margin are added to it.
+
+2 . Border-box:
+
+      On the other hand, when the box-sizing property is set to "border-box," the specified width and height 
+      include the content, padding, and border. The margin is still added to the total width and height. 
+      In this model, the box dimensions represent the total space the element occupies, including its content and any inner spacing.*/
+
+// Q . 6 ================================================================================================================
+
+// Ans . 6
+
+    /*In CSS, the z-index property is used to control the stacking order of positioned elements on the z-axis, which represents 
+    the depth or "elevation" of elements on a webpage. The z-index property applies to elements that have a CSS position value of relative, absolute, or fixed.*/
+
+
+// Q . 7 ================================================================================================================
+
+// Ans . 7 
+
+/* Both CSS Grid and Flexbox are powerful layout systems in CSS that enable the creation of responsive and flexible designs,
+ but they have different approaches and use cases. Here's a comparison of CSS Grid and Flexbox:
+
+Flexbox:
+ 1 . Flexbox is designed for one-dimensional layouts, either as rows or columns.
+ 2 . It provides a flexible and dynamic layout for distributing space and aligning items within a container.
+
+
+CSS Grid:
+ 1 . CSS Grid is designed for two-dimensional layouts, allowing both rows and columns to be defined simultaneously.
+ 2 . It provides a grid-based layout system, where elements can be placed in a grid format, making it ideal for complex, grid-like designs.
+
+
+Differences:
+- Flexbox is a one-dimensional layout system, while CSS Grid is a two-dimensional layout system.
+- Flexbox is best suited for arranging elements in a single row or column, while CSS Grid is better for creating complex grid-based layouts.
+- Flexbox focuses on the alignment and distribution of elements along a single axis, while CSS Grid provides precise control over both the horizontal and vertical dimensions of the layout.
+- Flexbox is often used for smaller-scale layouts or within specific components, while CSS Grid is often used for larger-scale page layouts. */
+
+
+
+// Q . 8 ================================================================================================================
+
+// Ans . 8 
+
+/*
+ Sure! Let's break down the differences between `absolute`, `relative`, `sticky`, and `fixed` positioning in CSS, along with examples:
+
+1. Absolute Positioning:
+
+    - When an element is set to `position: absolute`, it is positioned relative to its nearest positioned ancestor (an ancestor element with a `position` value other than `static`).
+    - If no positioned ancestor exists, the element is positioned relative to the initial containing block (usually the `<body>` element).
+
+
+
+2. Relative Positioning:
+
+    - When an element is set to `position: relative`, it remains in the normal document flow, and its position can be adjusted relative to its default position.
+    - Relative positioning does not affect the position of other elements on the page.
+
+
+
+3. Sticky Positioning:
+
+    - Sticky positioning is a hybrid of `relative` and `fixed` positioning.
+    - When an element is set to `position: sticky`, it behaves like `relative` positioning until it reaches a certain scroll threshold, and then it becomes `fixed` positioning.
+
+
+
+4. Fixed Positioning:
+
+    - When an element is set to `position: fixed`, it is positioned relative to the viewport, regardless of scrolling.
+    - Fixed positioning removes the element from the normal document flow, and it remains fixed at a specific position even when the page is scrolled.
+    */
+
+
+
+
+// Q . 10 ================================================================================================================
+/*
+
+  /* Default styles for all screen sizes */
+
+/* Styles for desktop */
+@media (min-width: 1024px) {
+  /* Adjust layout, sizing, and positioning for desktop */
+}
+
+/* Styles for tablet */
+@media (max-width: 1023px) and (min-width: 481px) {
+  /* Adjust layout, sizing, and positioning for tablet */
+}
+
+/* Styles for mobile */
+@media (max-width: 480px) {
+  /* Adjust layout, sizing, and positioning for mobile */
+}
+
+*/
+
