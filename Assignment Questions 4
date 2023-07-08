@@ -1,0 +1,132 @@
+// Q . 1 ===================================================================================================================
+
+
+/* In JavaScript, hoisting is a behavior in which variable and function declarations are moved to the top of their
+  containing scope during the compilation phase. This means that regardless of where declarations appear in the code,
+  they are treated as if they were declared at the beginning of their scope.*/
+
+
+
+// Q . 2 ===================================================================================================================
+
+ /*  The Temporal Dead Zone (TDZ) is a behavior in JavaScript that occurs during the variable declaration phase before a 
+     variable is assigned a value. It is a concept related to the hoisting mechanism in JavaScript.
+
+    In JavaScript, when a variable is declared using the let or const keywords, it is hoisted to the top of its block
+    scope but remains uninitialized until the point of the actual declaration. The TDZ is the period between the start
+    of the block scope and the declaration of the variable where trying to access the variable results in a ReferenceError.*/
+
+// Q . 3 ===================================================================================================================
+
+ /* The main differences between var and let in JavaScript are in their scoping and hoisting behavior.
+
+  Scope: Variables declared with var are function-scoped, meaning they are accessible within the entire function 
+  in which they are declared (or global scope if declared outside any function). On the other hand, variables declared
+  with let are block-scoped, which means they are limited to the block (enclosed by curly braces) in which they are declared.*/
+
+// Q . 4 ===================================================================================================================
+
+/* ECMAScript 6, also known as ECMAScript 2015 or ES6, introduced several significant features and improvements to the JavaScript 
+language. Here are some of the major features introduced in ECMAScript 6:
+
+1. let and const: ECMAScript 6 introduced block-scoped variables with the let and const keywords. let allows you to declare variables
+              with block scope, similar to variables declared with var, but with some key differences. const allows you to declare variables 
+              that are read-only and cannot be reassigned.
+
+2. Arrow Functions: Arrow functions provide a concise syntax for defining functions. They use the => syntax and inherit the this value
+                from the surrounding context. Arrow functions are often used for shorter and more readable function expressions.*/
+
+// Q . 5 ===================================================================================================================
+
+/* The main difference between let and const in JavaScript is in their reassignment and mutability behavior.
+
+
+1 . Variables declared with let can be reassigned a new value. This means you can assign a different value 
+    to a let variable after its initial assignment.
+
+2 . Variables declared with const, on the other hand, cannot be reassigned. Once a value is assigned to a
+    const variable, it cannot be changed throughout the program's execution.*/
+
+
+// Q . 6 ===================================================================================================================
+
+
+/* Template literals, introduced in ECMAScript 6 (ES6), provide an enhanced way to create strings in JavaScript.
+ They allow for easier and more readable string interpolation, multiline strings, and expression embedding.
+
+Template literals are defined using backticks (`) instead of single or double quotes. Inside a template literal,
+ you can include placeholders, denoted by ${expression}, which are replaced with the evaluated value of the expression.*/
+
+
+// Q . 7 ===================================================================================================================
+
+/*
+ The main difference between map() and forEach() is in their return values and the way they handle the elements of an array.
+
+ Return Value:
+
+ The map() method returns a new array containing the results of applying a provided function to each element of the original array.
+ It creates a new array with the same length as the original, where each element is the result of the callback function applied to 
+ the corresponding element of the original array.
+
+ The forEach() method does not return a value. It simply iterates over the elements of an array and executes a provided function
+ for each element. It is used for its side effects, such as performing an action on each element of the array without changing the array itself.
+ */
+
+
+
+// Q . 8 ===================================================================================================================
+
+/*
+
+In ECMAScript 6 (ES6), destructuring assignment syntax was introduced, allowing you to extract values from objects and arrays
+ into individual variables. Destructuring simplifies the process of accessing and working with complex data structures. 
+ Here's how you can destructure objects and arrays in ES6:
+
+Destructuring Objects:
+To destructure an object, you use curly braces {} and specify the variable names that correspond to the object's properties.
+ The variable names should match the property names of the object.
+
+ */
+
+
+
+// Q . 9 ===================================================================================================================
+
+/*
+
+In ECMAScript 6 (ES6), you can define default parameter values for function parameters, allowing you to specify a default value
+ that will be used if no argument is provided or if the argument is undefined. Here's how you can define default parameter 
+ values in ES6 functions:
+
+ function greet(name = 'Guest') {
+  console.log(`Hello, ${name}!`);
+}
+
+greet(); // Output: Hello, Guest!
+greet('Alice'); // Output: Hello, Alice!
+*/
+
+
+// Q . 10 ===================================================================================================================
+
+
+/*
+
+The spread operator (...) in ECMAScript 6 (ES6) has multiple purposes and can be used in various contexts. 
+Its primary purpose is to expand or spread elements from an iterable (like an array or string) into individual 
+elements or to combine multiple elements into an array. Here are some common use cases for the spread operator:
+
+Expanding Arrays:
+  The spread operator can be used to expand the elements of an array into individual elements. It effectively
+  "spreads" out the values of the array.
+
+const numbers = [1, 2, 3];
+console.log(...numbers); // Output: 1 2 3
+
+const array1 = [4, 5];
+const array2 = [6, 7];
+const combinedArray = [...array1, ...array2];
+console.log(combinedArray); // Output: [4, 5, 6, 7]
+
+*/
