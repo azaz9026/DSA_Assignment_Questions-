@@ -1,0 +1,52 @@
+// Q .1 =============================================================================================================================
+
+/*A media query in CSS is a feature that allows you to apply different styles and rules based on various device
+ characteristics and conditions such as screen size, resolution, device orientation, and more. It is used to create responsive
+ designs that adapt to different devices and provide an optimal user experience.*/
+
+
+ // Q .2 =============================================================================================================================
+
+
+/* @media: This is the keyword that indicates the beginning of a media query rule.
+
+mediaType: It specifies the type of media you want to target, such as screen, print, speech, etc. The screen type is commonly used for targeting devices with screens like desktops, laptops, tablets, and smartphones.
+mediaFeature: This is an optional part that allows you to specify one or more conditions for the media query. Media features include properties like width, height, orientation, aspect-ratio, color, and more.
+Here's an example that demonstrates a media query targeting screens with a maximum width of 600 pixels:
+
+css
+Copy code
+@media screen and (max-width: 600px) {
+  /* CSS rules to apply when the screen width is 600 pixels or less */
+//}
+
+
+
+// Q .3 =============================================================================================================================
+
+/*Media queries play a crucial role in implementing responsive design using breakpoints. By using media queries, 
+you can define different CSS rules and styles that will be applied when certain conditions, such as screen
+ width or device characteristics, are met. These conditions are typically set as breakpoints in the media queries.
+
+ /* Media query for screens with a width of 768 pixels or more */
+//@media screen and (min-width: 768px) {
+  /* CSS rules for medium-sized screens and above */
+//}
+
+
+// Q .4 =============================================================================================================================
+
+
+/* The purpose of using media queries for print media is to provide a specific and optimized layout and styling when a web page is printed.
+   Media queries allow you to define CSS rules that are specifically applied when a page is being printed, enabling you to customize
+   the appearance and format of the printed document.
+
+   When a web page is printed, it undergoes a different rendering process compared to being displayed on a screen. The screen-specific 
+   styles, such as background colors, navigation menus, or interactive elements, may not be suitable or necessary for a printed document.
+    Media queries targeting print media help address these concerns by allowing you to apply styles that are more appropriate for print.*/
+
+
+
+// Q .5 =============================================================================================================================
+
+https://github.com/azaz9026/portfolio.git
