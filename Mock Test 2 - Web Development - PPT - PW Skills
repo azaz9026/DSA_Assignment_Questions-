@@ -1,0 +1,55 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Box</title>
+</head>
+<body>
+    <div class="box" ondbclick></div>
+    <script>
+        const box = document.querySelector(".box");
+
+         box.addEventListener('click', function(){
+
+        if(box.classList=="target"){
+            box.classList.remove("target");
+            box.classList.add("box");
+        }
+       else{
+        box.classList.add("target");
+        box.classList.remove("box");
+       }
+});
+
+    </script>
+</body>
+</html>
+
+// style sheet --------------------------------------------------------------------------------------------------
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.target{
+    height: 600px;
+    width: 600px;
+    background-color: yellow;
+}
+.box{
+    height: 300px;
+    width: 300px;
+     background-color: red;
+  }
