@@ -1,0 +1,77 @@
+// Q.1 ==========================================================================================================================
+
+  In object-oriented programming, a constructor is a special method or function that is used to initialize and 
+  create an instance (object) of a class. It is called automatically when an object of the class is created.
+  The constructor has the same name as the class and may have parameters that are used to initialize the 
+  object's state or set its initial values
+
+// Q.2 ==========================================================================================================================
+  
+  In many programming languages, including Java, C++, and JavaScript, the this keyword refers to the current
+  instance of a class or object. It is a reference that allows you to access and manipulate the members 
+  (variables and methods) of the current object. The purpose of the this keyword is to disambiguate between
+  the instance variables and local variables or parameters with the same name, and to enable object-oriented
+  programming features such as method chaining and self-reference.
+
+// Q.3 ==========================================================================================================================
+  
+  The call, apply, and bind methods in JavaScript are used to manipulate the execution context and binding of functions.
+  They allow you to explicitly set the value of this within a function and pass arguments to the function
+
+// Q.4 ==========================================================================================================================
+
+    OOPS, which stands for Object-Oriented Programming, is a programming paradigm that organizes code around objects,
+    which are instances of classes. It aims to structure code in a way that models real-world entities, allowing for 
+    modular, reusable, and maintainable software development. OOPS focuses on encapsulation, inheritance, polymorphism,
+    and abstraction to provide a robust and efficient approach to programming.
+
+// Q.5 ==========================================================================================================================
+
+  
+  Abstraction is a fundamental concept in object-oriented programming that involves representing complex systems or entities by 
+  simplifying them to their essential features and hiding unnecessary details. It focuses on defining interfaces or abstract 
+  classes that provide a high-level view of functionality without specifying the implementation. The purpose of abstraction 
+  is to manage complexity, improve code modularity, and provide a clear separation between the essential characteristics of an
+  entity and its implementation.
+
+// Q.6 ==========================================================================================================================
+
+  Polymorphism is a core concept in object-oriented programming that allows objects of different classes to be treated as objects
+  of a common superclass. It refers to the ability of an object to take on many forms or exhibit different behaviors based on the 
+  context in which it is used. The purpose of polymorphism is to provide flexibility, extensibility, and code reusability by enabling
+  a single interface to be implemented by multiple classes.
+
+
+// Q.7 ==========================================================================================================================
+
+  Inheritance is a fundamental concept in object-oriented programming (OOP) that allows a class to inherit properties and behaviors
+  from another class. It establishes a relationship between classes where one class, known as the subclass or derived class, inherits
+  the characteristics of another class, known as the superclass or base class. The purpose of inheritance is to promote code reuse,
+  create hierarchical relationships, and implement the "is-a" relationship between classes.
+
+// Q.8 ==========================================================================================================================
+
+
+  Encapsulation is a fundamental concept in object-oriented programming (OOP) that involves bundling data (attributes) and methods 
+  (behaviors) together within a class. It aims to hide the internal details of an object and provide a public interface for interacting
+  with the object. The purpose of encapsulation is to achieve data protection, enhance code maintainability, promote reusability, and 
+  establish clear boundaries between components.
+
+
+// Q.9 ==========================================================================================================================
+
+
+  
+  In JavaScript, a class is a blueprint or a template that defines the structure, behavior, and initial state of objects.
+  It provides a way to create multiple instances (objects) with similar properties and methods. Classes in JavaScript were
+  introduced in ECMAScript 2015 (ES6) and offer syntactic sugar over the traditional prototype-based inheritance model.
+
+
+// Q.10 ==========================================================================================================================
+
+  vaScript, the super keyword is used to call and access the parent class's properties and methods from within a subclass. 
+  It is primarily used within the constructor of a subclass to invoke the constructor of the superclass and to access 
+  properties and methods inherited from the superclass. The super keyword can be used in two ways:
+
+
+
