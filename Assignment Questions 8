@@ -1,0 +1,69 @@
+// Q.1 ====================================================================================================================================
+
+React is a popular JavaScript library used for building user interfaces (UIs). It was developed by Facebook and is now 
+maintained by both Facebook and a large community of developers. React is commonly used for creating interactive and 
+dynamic web applications
+
+// Q.2 ====================================================================================================================================
+
+
+The Virtual DOM (Document Object Model) is a programming concept used in libraries like React to efficiently update and
+render user interfaces. It is a lightweight, in-memory representation of the actual DOM, which is the HTML structure 
+of a web page.
+
+
+// Q.3 ====================================================================================================================================
+
+
+Virtual DOM:
+      The Virtual DOM is a lightweight, in-memory representation of the actual DOM.
+      It is used as a tool for optimizing and efficiently updating the UI in libraries
+      like React.
+Real DOM: 
+      The real DOM is the actual HTML structure of a web page. It represents the current 
+      state of the UI and provides an interface to manipulate and interact with the 
+      elements on the page.
+
+
+// Q.4 ====================================================================================================================================
+
+In the context of web development, a component is a self-contained, reusable piece of code that encapsulates
+the structure, behavior, and presentation of a specific part of a user interface (UI). Components are the
+building blocks of most modern web frameworks and libraries, such as React, Vue.js, and Angular.
+
+Functional Components:
+Class Components:
+
+
+
+// Q.5 ====================================================================================================================================
+
+Functional Components:
+
+Also known as stateless components or presentational components.
+Written as JavaScript functions.
+Used for simple UI rendering without internal state or lifecycle methods.
+Typically receive data as props and return the rendered JSX (UI).
+
+Class Components:
+
+Also known as stateful components or container components.
+Written as ES6 classes that extend the base component class provided by the framework or library.
+Used for more complex UI logic, managing internal state, and lifecycle methods.
+Can hold and modify state, handle user events, and interact with other components.
+
+// Q.6 ====================================================================================================================================
+
+In React, the component lifecycle refers to a series of phases or events that occur during the lifespan of a component.
+Each phase has associated methods that can be overridden to perform certain actions or tasks at specific points in the 
+component's lifecycle. The React component lifecycle has been divided into three main phases: Mounting, Updating,
+and Unmounting.
+
+
+// Q.7 ====================================================================================================================================
+
+Prop drilling in React refers to the process of passing props through multiple layers of components, even if intermediate 
+components do not need or use those props. It can occur when components in a nested hierarchy require access to data or
+functions that are available higher up in the component tree.
+
+
