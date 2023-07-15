@@ -1,0 +1,93 @@
+// Q.1 =================================================================================================================================
+
+In React, hooks are functions that allow you to use state and other React features in functional components.
+They were introduced in React 16.8 as a way to write reusable and stateful logic without using class components.
+
+// Q.2 =================================================================================================================================
+
+The useState hook is a built-in hook in React that allows you to add state to functional components.
+It provides a way to store and update state values within the component's scope. The useState hook 
+returns an array with two elements: the current state value and a function to update the state.
+
+// Q.3 =================================================================================================================================
+
+In React, you can pass data from one component to another by utilizing props.
+Props (short for properties) allow you to pass data from a parent component 
+to its child component. 
+
+
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  const data = 'Hello from Parent';
+
+  return (
+    <div>
+      <ChildComponent data={data} />
+    </div>
+  );
+}
+
+
+
+
+// Q.4 =================================================================================================================================
+
+The "key" prop in React lists is a special attribute used to help React identify individual items in a list of elements.
+It is important to use the "key" prop correctly for the following reasons:
+
+Element identification: The "key" prop helps React identify each element in a list. When a list is re-rendered, 
+React uses the "key" to determine whether an element is new, updated, or removed. It helps React efficiently 
+update the UI by performing targeted changes instead of re-rendering the entire list.
+
+// Q.5 =================================================================================================================================
+
+
+In React, it is significant to use the setState method provided by the component's state object to modify state, 
+rather than modifying the state directly. Here are the reasons why:
+
+Enabling React's reactivity: When you update state using the setState method, React becomes aware of the state 
+change. It triggers a re-render of the component and its children, ensuring that the UI reflects the updated 
+state. React uses a process called reconciliation to efficiently update only the necessary parts of the DOM, 
+resulting in better performance.
+
+
+// Q.6 =================================================================================================================================
+
+
+React fragments are a feature introduced in React 16.2 that allow you to group multiple elements together without adding an
+extra DOM node. Fragments are a way to create a parent wrapper for a collection of elements without introducing additional 
+levels in the DOM hierarchy.
+
+Before fragments were introduced, if you wanted to return multiple elements from a component, you had to wrap them in 
+a single parent element (e.g., a <div>). This wrapper element would add an extra node in the DOM, which might not be
+desirable in some cases.
+
+
+// Q.7 =================================================================================================================================
+
+
+Conditional rendering in React allows you to conditionally display different components, elements, or content 
+based on certain conditions or states. There are multiple approaches you can use to handle conditional 
+rendering in React:
+
+If/else statements:
+
+You can use regular JavaScript if/else statements within your component's render method to conditionally
+render different elements or components based on a condition. Here's an example:
+
+import React from 'react';
+
+function MyComponent({ isLoggedIn }) {
+  if (isLoggedIn) {
+    return <p>Welcome, user!</p>;
+  } else {
+    return <p>Please log in.</p>;
+  }
+}
+
+// Q.8 =================================================================================================================================
+
+
+
+
