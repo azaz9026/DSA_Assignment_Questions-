@@ -1,0 +1,70 @@
+// Q.1 =================================================================================================================================================
+
+In Node.js, middleware refers to a software layer that sits between an application's server and its business logic. 
+It acts as a bridge that intercepts incoming requests and outgoing responses, allowing you to add additional 
+functionality, modify data, or perform tasks such as authentication, logging, error handling, and more.
+
+Middleware functions in Node.js are typically functions that take three arguments: request (req), response
+(res), and next. The request object represents the incoming HTTP request, the response object is used to
+send the response back to the client, and next is a function that passes control to the next middleware
+in the stack.
+
+
+// Q.2 =================================================================================================================================================
+
+
+
+Express is a web application framework built on top of Node.js, so it would be more accurate to compare Express with the
+built-in HTTP module of Node.js rather than comparing Express with Node.js itself. Here are some reasons why you might 
+choose to use Express over the built-in HTTP module:
+
+Simplicity: Express provides a simple and intuitive API for building web applications. It abstracts away many low-level 
+details and boilerplate code that you would have to handle manually when using the raw Node.js HTTP module. This makes 
+it easier and faster to develop web applications.
+
+
+// Q.3 =================================================================================================================================================
+
+
+REST (Representational State Transfer) API is an architectural style for designing networked applications. 
+It is a set of principles and constraints that provide a standardized approach for building web services
+that are scalable, stateless, and can be easily consumed by clients.
+
+Here are the key characteristics and principles of REST APIs:
+
+Statelessness: REST APIs are stateless, meaning that each request from a client to the server should 
+contain all the necessary information for the server to understand and process the request. The server
+does not maintain any session state between requests, which allows for scalability and reliability.
+
+
+// Q.4 =================================================================================================================================================
+
+
+MongoDB is a popular open-source document-oriented database system that provides high scalability, flexibility,
+and performance. It is classified as a NoSQL (non-relational) database and is designed to store, retrieve, and
+manage large volumes of structured and unstructured data.
+
+Here are some key uses and benefits of MongoDB:
+
+Document Storage: MongoDB stores data in flexible and self-describing documents called BSON (Binary JSON). 
+BSON documents are similar to JSON objects and can contain nested structures, arrays, and various data types.
+This allows developers to store and retrieve complex data structures without the need for complex joins or
+schema migrations.
+
+
+// Q.5 =================================================================================================================================================
+
+Mongoose is an Object Data Modeling (ODM) library for Node.js that provides a higher-level abstraction and a 
+schema-based solution for working with MongoDB. It acts as a middleware between your Node.js application and
+the MongoDB database, making it easier to interact with MongoDB and manage data.
+
+Here's how Mongoose relates to MongoDB:
+
+Schema and Model Management: Mongoose allows you to define schemas for your MongoDB collections, which
+define the structure and validation rules for the documents stored in the database. Schemas provide a
+way to enforce data consistency and ensure that documents adhere to a specific structure. Mongoose also 
+allows you to define models based on these schemas, which provide a programming interface for interacting
+with the data.
+
+
+
