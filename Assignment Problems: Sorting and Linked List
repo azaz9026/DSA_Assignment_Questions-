@@ -1,0 +1,242 @@
+Q.1=======================================================================
+
+def deleteNode(node):
+    # Check if the node and its next node are not None
+    if node is None or node.next is None:
+        return
+
+    # Copy the value of the next node to the current node
+    node.val = node.next.val
+
+    # Bypass the next node
+    node.next = node.next.next
+
+
+Q.2 ============================================================================
+
+def mergeTwoLists(l1, l2):
+    # Create a dummy node as the head of the merged list
+    dummy = ListNode(0)
+    current = dummy
+
+    # Loop until either l1 or l2 becomes None
+    while l1 is not None and l2 is not None:
+        if l1.val < l2.val:
+            current.next = l1
+            l1 = l1.next
+        else:
+            current.next = l2
+            l2 = l2.next
+
+        current = current.next
+
+    # Append the remaining nodes from l1 or l2, if any
+    if l1 is not None:
+        current.next = l1
+    else:
+        current.next = l2
+
+    # Return the head of the merged list (excluding the dummy node)
+    return dummy.next
+
+
+
+Q.3 ============================================================================
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def leftShiftLinkedList(head, k):
+    if not head or k <= 0:
+        return head
+
+    # Find the length of the linked list
+    length = 1
+    current = head
+    while current.next:
+        length += 1
+        current = current.next
+
+    # Adjust k to handle cases where k > length
+    k = k % length
+
+    if k == 0:
+        return head
+
+    # Find the (k+1)-th node from the beginning of the linked list
+    steps = length - k - 1
+    current = head
+    while steps > 0:
+        current = current.next
+        steps -= 1
+
+    # Update the pointers to rotate the linked list
+    new_head = current.next
+    current.next = None
+
+    # Move to the last node of the original linked list
+    current = new_head
+    while current.next:
+        current = current.next
+
+    # Connect the last node to the original head to complete the rotation
+    current.next = head
+
+    return new_head
+
+# Function to print the linked list
+def printLinkedList(head):
+    current = head
+    while current:
+        print(current.val, end=" -> ")
+        current = current.next
+    print("None")
+
+# Test case
+if __name__ == "__main__":
+    values = [2, 4, 7, 8, 9]
+    k = 3
+
+    # Create the linked list from the given values
+    head = ListNode(values[0])
+    current = head
+    for val in values[1:]:
+        current.next = ListNode(val)
+        current = current.next
+
+    print("Original linked list:")
+    printLinkedList(head)
+
+    # Left-shift the linked list by k nodes
+    new_head = leftShiftLinkedList(head, k)
+
+    print("\nLinked list after left-shift by", k, "nodes:")
+    printLinkedList(new_head)
+
+Q.4============================================================================================================
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def removeZeroSumSublists(head):
+    # Create a dummy node to handle edge cases
+    dummy = ListNode(0)
+    dummy.next = head
+
+    # Initialize a dictionary to store cumulative sums and their corresponding nodes
+    sum_map = {}
+    current_sum = 0
+    current = dummy
+
+    while current:
+        current_sum += current.val
+
+        if current_sum in sum_map:
+            # Remove nodes between sum_map[current_sum] and current
+            prev = sum_map[current_sum].next
+            temp_sum = current_sum + prev.val
+            while prev != current:
+                del sum_map[temp_sum]
+                prev = prev.next
+                temp_sum += prev.val
+
+            # Update the next pointer of the node before the start of the sequence
+            sum_map[current_sum].next = current.next
+        else:
+            # Store the cumulative sum and its corresponding node
+            sum_map[current_sum] = current
+
+        current = current.next
+
+    return dummy.next
+
+# Function to create a linked list from a list of values
+def createLinkedList(values):
+    head = ListNode(values[0])
+    current = head
+    for val in values[1:]:
+        current.next = ListNode(val)
+        current = current.next
+    return head
+
+# Function to convert the linked list to a list for printing
+def linkedListToList(head):
+    result = []
+    current = head
+    while current:
+        result.append(current.val)
+        current = current.next
+    return result
+
+# Test case
+if __name__ == "__main__":
+    values = [1, 2, -3, 3, 1]
+    head = createLinkedList(values)
+
+    print("Original linked list:", linkedListToList(head))
+
+    new_head = removeZeroSumSublists(head)
+
+    print("Linked list after removing zero-sum sequences:", linkedListToList(new_head))
+
+Q.5 ============================================================================================================
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def oddEvenList(head):
+    if not head or not head.next:
+        return head
+
+    # Create separate pointers for odd and even lists
+    odd_head = head
+    even_head = head.next
+    odd_current = odd_head
+    even_current = even_head
+
+    # Traverse the original list and create odd and even lists
+    while even_current and even_current.next:
+        odd_current.next = even_current.next
+        odd_current = odd_current.next
+        even_current.next = odd_current.next
+        even_current = even_current.next
+
+    # Combine the odd and even lists
+    odd_current.next = even_head
+
+    return odd_head
+
+# Function to create a linked list from a list of values
+def createLinkedList(values):
+    head = ListNode(values[0])
+    current = head
+    for val in values[1:]:
+        current.next = ListNode(val)
+        current = current.next
+    return head
+
+# Function to convert the linked list to a list for printing
+def linkedListToList(head):
+    result = []
+    current = head
+    while current:
+        result.append(current.val)
+        current = current.next
+    return result
+
+# Test case
+if __name__ == "__main__":
+    values = [1, 2, 3, 4, 5]
+    head = createLinkedList(values)
+
+    print("Original linked list:", linkedListToList(head))
+
+    new_head = oddEvenList(head)
+
+    print("Reordered linked list:", linkedListToList(new_head))
