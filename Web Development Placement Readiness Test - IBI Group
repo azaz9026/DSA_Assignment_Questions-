@@ -1,0 +1,47 @@
+// Q.7 ==========================================================================================
+
+const arr = [1, 2, 3, 4, 5];
+
+const reversedArray = arr.reduce((reversed, current) => {
+  return [current, ...reversed];
+}, []);
+
+console.log(reversedArray);
+
+// Q.8 ==========================================================================================
+
+console.log(1); -  1 to the console immediately when the function is executed.
+
+console.log(4); -  4 to the console immediately after the first console.log(1);.
+
+setTimeout(function(){console.log(3)}, 0); -  delay of 0 milliseconds.  the setTimeout function with a delay of 0 does not execute immediately.
+
+setTimeout(function(){console.log(2)}, 1000); - delay of 1000 milliseconds (1 second). 
+
+output is ( 1 , 4 , 3 , 2 )
+
+// Q.9 ==========================================================================================
+
+
+array 1: length=5 last=j,o,n,e,s
+array 2: length=5 last=j,o,n,e,s
+
+
+// Q.11 ==========================================================================================
+
+// that was not in the code  odds: [], evens: []  .
+
+const numbers = [1, 2, 3, 4, 5];
+
+const result = numbers.reduce((acc, num) => {
+  if (num % 2 === 0) {
+    acc.evens.push(num);
+  } else {
+    acc.odds.push(num);
+  }
+  return acc;
+}, { odds: [], evens: [] }); // Providing an initial value as an empty object with 'odds' and 'evens' arrays.
+
+console.log(result);
+
+
