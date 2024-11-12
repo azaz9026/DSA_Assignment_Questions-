@@ -6,7 +6,6 @@ function twoSum(numbers, target) {
 
   while (left < right) {
     const currentSum = numbers[left] + numbers[right];
-
     if (currentSum === target) {
       return [left + 1, right + 1]; // Adding one to the indices to match the 1-indexing requirement
     } else if (currentSum < target) {
